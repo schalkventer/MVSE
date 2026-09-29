@@ -16,7 +16,7 @@
     --red: #dc3b1b;
     --yellow: #f2b81f;
     --blue: #2b96d6;
-    --ink: #080a1c;
+    --ink: #000000;
     --white: #ffffff;
   }
 
@@ -30,22 +30,7 @@
     overflow: hidden;
     font-family: "Roboto", sans-serif;
     color: var(--white);
-    background:
-      radial-gradient(560px 520px at 1060px 380px, rgba(43,150,214,.45), transparent 70%),
-      radial-gradient(520px 420px at 120px 40px, rgba(234,84,36,.30), transparent 70%),
-      radial-gradient(420px 360px at 640px 760px, rgba(242,184,31,.18), transparent 70%),
-      linear-gradient(160deg, #0d1030 0%, var(--ink) 60%);
-  }
-
-  /* faint grid, fading out towards the text */
-  .grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
-    background-size: 48px 48px;
-    -webkit-mask-image: radial-gradient(640px 600px at 1060px 360px, #000 20%, transparent 75%);
-            mask-image: radial-gradient(640px 600px at 1060px 360px, #000 20%, transparent 75%);
+    background: var(--ink);
   }
 
   /* ---------- speakers: circle avatar + name tag ---------- */
@@ -81,23 +66,23 @@
     box-shadow: 0 10px 24px rgba(0,0,0,.45);
   }
 
-  .speaker.schalk { left: 875px; top: 40px; }
+  .speaker.schalk { left: 895px; top: 44px; }
   .schalk .avatar {
-    width: 310px; height: 310px;
+    width: 270px; height: 270px;
     background: linear-gradient(160deg, #3aa6e6 0%, #1c5aa8 100%);
   }
   /* warm up the blue stage lighting a touch so skin tones read naturally */
   .schalk .avatar img {
-    left: 13px; top: 32px; height: 540px;
+    left: 4px; top: 28px; height: 490px;
     filter: sepia(.14) saturate(1.12) brightness(1.04);
   }
 
-  .speaker.justin { left: 987px; top: 392px; }
+  .speaker.justin { left: 975px; top: 368px; }
   .justin .avatar {
-    width: 250px; height: 250px;
+    width: 270px; height: 270px;
     background: linear-gradient(160deg, #f07a3e 0%, #c7361a 100%);
   }
-  .justin .avatar img { left: 25px; top: 25px; height: 225px; }
+  .justin .avatar img { left: 27px; top: 27px; height: 243px; }
 
   /* ---------- copy ---------- */
   .copy {
@@ -168,7 +153,7 @@
     padding: 16px 24px;
     border-radius: 16px;
     background: #000;
-    border: 2px solid rgba(255,255,255,.14);
+    border: 2px solid rgba(255,255,255,.22);
     box-shadow: 0 16px 36px rgba(0,0,0,.5);
     font-family: "JetBrains Mono", monospace;
     font-weight: 700;
@@ -183,8 +168,6 @@
 </head>
 <body>
   <div class="thumb">
-    <div class="grid"></div>
-
     <div class="speaker schalk">
       <div class="avatar"><img src="assets/schalk-venter.png" alt=""></div>
       <div class="name">Schalk Venter</div>
