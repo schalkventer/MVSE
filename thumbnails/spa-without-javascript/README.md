@@ -7,7 +7,7 @@ Schalk Venter and Justin Slack from FEDSA.
 - `thumbnail.html` — the design source (plain HTML/CSS, fixed 1280×720 canvas).
 - `render.mjs` — renders the HTML to `thumbnail.png` with Playwright
   (`npm i playwright && node render.mjs`).
-- `assets/` — background-removed portraits, FEDSA logo, and self-hosted fonts
+- `assets/` — background-removed portraits and self-hosted fonts
   (Roboto, JetBrains Mono).
 
 Photo sources: Schalk's GitHub avatar and Justin's Sessionize speaker photo,
