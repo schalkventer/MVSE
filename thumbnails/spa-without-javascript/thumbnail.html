@@ -33,7 +33,7 @@
     background: var(--ink);
   }
 
-  /* ---------- speakers: circle avatar + name tag ---------- */
+  /* ---------- speakers: square avatar + name tag ---------- */
   .speaker {
     position: absolute;
     display: flex;
@@ -42,7 +42,7 @@
   }
   .avatar {
     position: relative;
-    border-radius: 50%;
+    border-radius: 16px;
     overflow: hidden;
     box-shadow:
       0 0 0 7px var(--white),
@@ -66,23 +66,24 @@
     box-shadow: 0 10px 24px rgba(0,0,0,.45);
   }
 
-  .speaker.schalk { left: 895px; top: 44px; }
+  .speaker.schalk { left: 946px; top: 50px; }
   .schalk .avatar {
     width: 270px; height: 270px;
     background: linear-gradient(160deg, #3aa6e6 0%, #1c5aa8 100%);
   }
   /* warm up the blue stage lighting a touch so skin tones read naturally */
   .schalk .avatar img {
-    left: 4px; top: 28px; height: 490px;
+    left: -9px; top: 11px; height: 536px;
     filter: sepia(.14) saturate(1.12) brightness(1.04);
   }
 
-  .speaker.justin { left: 975px; top: 368px; }
+  .speaker.justin { left: 946px; top: 374px; }
   .justin .avatar {
     width: 270px; height: 270px;
     background: linear-gradient(160deg, #f07a3e 0%, #c7361a 100%);
   }
-  .justin .avatar img { left: 27px; top: 27px; height: 243px; }
+  /* the source photo is cropped at the shoulders, so it fills the square edge to edge */
+  .justin .avatar img { left: 0; bottom: 0; width: 270px; }
 
   /* ---------- copy ---------- */
   .copy {
