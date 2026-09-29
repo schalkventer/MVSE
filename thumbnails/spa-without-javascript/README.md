@@ -9,7 +9,7 @@ Schalk Venter and Justin Slack from FEDSA. Title on the thumbnail:
 - `render.mjs` — renders the HTML to `thumbnail.png` with Playwright
   (`npm i playwright && node render.mjs`).
 - `assets/` — background-removed portraits and self-hosted fonts
-  (Roboto, JetBrains Mono).
+  (Roboto).
 
 Photo sources: Schalk's GitHub avatar and Justin's Sessionize speaker photo,
 cut out with `rembg` (`birefnet-portrait` model).

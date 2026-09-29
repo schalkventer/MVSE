@@ -7,8 +7,6 @@
   @font-face { font-family: "Roboto"; font-weight: 900; font-style: italic; src: url("assets/fonts/roboto-latin-900-italic.woff2") format("woff2"); }
   @font-face { font-family: "Roboto"; font-weight: 900; font-style: normal; src: url("assets/fonts/roboto-latin-900-normal.woff2") format("woff2"); }
   @font-face { font-family: "Roboto"; font-weight: 700; font-style: normal; src: url("assets/fonts/roboto-latin-700-normal.woff2") format("woff2"); }
-  @font-face { font-family: "JetBrains Mono"; font-weight: 700; src: url("assets/fonts/jetbrains-mono-latin-700-normal.woff2") format("woff2"); }
-  @font-face { font-family: "JetBrains Mono"; font-weight: 500; src: url("assets/fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2"); }
 
   :root {
     /* FEDSA mountain palette */
@@ -97,7 +95,6 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 96px;
   }
 
   .headline {
@@ -147,24 +144,6 @@
     border-radius: 10px;
     text-shadow: none;
   }
-
-  .code {
-    display: inline-flex;
-    align-items: center;
-    padding: 16px 24px;
-    border-radius: 16px;
-    background: #000;
-    border: 2px solid rgba(255,255,255,.22);
-    box-shadow: 0 16px 36px rgba(0,0,0,.5);
-    font-family: "JetBrains Mono", monospace;
-    font-weight: 700;
-    font-size: 30px;
-    white-space: nowrap;
-  }
-  .code .at   { color: #ff7ab6; }
-  .code .prop { color: #7fd1ff; }
-  .code .val  { color: var(--yellow); }
-  .code .p    { color: #9aa3c7; }
 </style>
 </head>
 <body>
@@ -188,10 +167,6 @@
         </span>
         <span class="l3">With <span class="no">No JavaScript</span></span>
       </h1>
-
-      <div class="code">
-        <span><span class="at">@view-transition</span> <span class="p">{</span> <span class="prop">navigation</span><span class="p">:</span> <span class="val">auto</span><span class="p">; }</span></span>
-      </div>
     </div>
   </div>
 </body>
