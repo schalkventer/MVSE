@@ -48,9 +48,15 @@
             mask-image: radial-gradient(640px 600px at 1060px 360px, #000 20%, transparent 75%);
   }
 
-  /* ---------- speaker avatars ---------- */
-  .avatar {
+  /* ---------- speakers: circle avatar + name tag ---------- */
+  .speaker {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .avatar {
+    position: relative;
     border-radius: 50%;
     overflow: hidden;
     box-shadow:
@@ -59,23 +65,39 @@
   }
   .avatar img { position: absolute; display: block; }
 
-  .avatar.schalk {
-    left: 872px; top: 52px;
-    width: 330px; height: 330px;
+  .name {
+    position: relative;
+    margin-top: -20px;
+    padding: 7px 18px 8px;
+    border-radius: 999px;
+    background: var(--white);
+    color: var(--ink);
+    font-weight: 900;
+    font-style: italic;
+    font-size: 26px;
+    letter-spacing: .01em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    box-shadow: 0 10px 24px rgba(0,0,0,.45);
+  }
+
+  .speaker.schalk { left: 875px; top: 40px; }
+  .schalk .avatar {
+    width: 310px; height: 310px;
     background: linear-gradient(160deg, #3aa6e6 0%, #1c5aa8 100%);
   }
   /* warm up the blue stage lighting a touch so skin tones read naturally */
-  .avatar.schalk img {
-    left: 14px; top: 34px; height: 575px;
+  .schalk .avatar img {
+    left: 13px; top: 32px; height: 540px;
     filter: sepia(.14) saturate(1.12) brightness(1.04);
   }
 
-  .avatar.justin {
-    left: 984px; top: 408px;
-    width: 264px; height: 264px;
+  .speaker.justin { left: 987px; top: 392px; }
+  .justin .avatar {
+    width: 250px; height: 250px;
     background: linear-gradient(160deg, #f07a3e 0%, #c7361a 100%);
   }
-  .avatar.justin img { left: 26px; top: 26px; height: 238px; }
+  .justin .avatar img { left: 25px; top: 25px; height: 225px; }
 
   /* ---------- copy ---------- */
   .copy {
@@ -163,8 +185,14 @@
   <div class="thumb">
     <div class="grid"></div>
 
-    <div class="avatar schalk"><img src="assets/schalk-venter.png" alt="Schalk Venter"></div>
-    <div class="avatar justin"><img src="assets/justin-slack.png" alt="Justin Slack"></div>
+    <div class="speaker schalk">
+      <div class="avatar"><img src="assets/schalk-venter.png" alt=""></div>
+      <div class="name">Schalk Venter</div>
+    </div>
+    <div class="speaker justin">
+      <div class="avatar"><img src="assets/justin-slack.png" alt=""></div>
+      <div class="name">Justin Slack</div>
+    </div>
 
     <div class="copy">
       <h1 class="headline">
