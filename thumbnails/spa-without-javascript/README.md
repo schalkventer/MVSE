@@ -2,7 +2,8 @@
 
 `thumbnail.png` (1280×720) for the video on building single-page-app style
 interactions with CSS View Transitions and zero JavaScript, featuring
-Schalk Venter and Justin Slack from FEDSA.
+Schalk Venter and Justin Slack from FEDSA. Title on the thumbnail:
+**"App-like animations with no JavaScript"**.
 
 - `thumbnail.html` — the design source (plain HTML/CSS, fixed 1280×720 canvas).
 - `render.mjs` — renders the HTML to `thumbnail.png` with Playwright

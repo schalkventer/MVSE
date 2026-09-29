@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>SPA Without JavaScript — YouTube Thumbnail</title>
+<title>App-Like Animations — YouTube Thumbnail</title>
 <style>
   @font-face { font-family: "Roboto"; font-weight: 900; font-style: italic; src: url("assets/fonts/roboto-latin-900-italic.woff2") format("woff2"); }
   @font-face { font-family: "Roboto"; font-weight: 900; font-style: normal; src: url("assets/fonts/roboto-latin-900-normal.woff2") format("woff2"); }
@@ -17,7 +17,6 @@
     --yellow: #f2b81f;
     --blue: #2b96d6;
     --ink: #080a1c;
-    --ink-2: #12163a;
     --white: #ffffff;
   }
 
@@ -32,7 +31,7 @@
     font-family: "Roboto", sans-serif;
     color: var(--white);
     background:
-      radial-gradient(620px 520px at 1010px 420px, rgba(43,150,214,.55), transparent 70%),
+      radial-gradient(560px 520px at 1060px 380px, rgba(43,150,214,.45), transparent 70%),
       radial-gradient(520px 420px at 120px 40px, rgba(234,84,36,.30), transparent 70%),
       radial-gradient(420px 360px at 640px 760px, rgba(242,184,31,.18), transparent 70%),
       linear-gradient(160deg, #0d1030 0%, var(--ink) 60%);
@@ -45,29 +44,38 @@
       linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
     background-size: 48px 48px;
-    -webkit-mask-image: radial-gradient(700px 600px at 1000px 360px, #000 20%, transparent 75%);
-            mask-image: radial-gradient(700px 600px at 1000px 360px, #000 20%, transparent 75%);
+    -webkit-mask-image: radial-gradient(640px 600px at 1060px 360px, #000 20%, transparent 75%);
+            mask-image: radial-gradient(640px 600px at 1060px 360px, #000 20%, transparent 75%);
   }
 
-  /* ---------- people ---------- */
-  .person {
+  /* ---------- speaker avatars ---------- */
+  .avatar {
     position: absolute;
-    bottom: 0;
-    filter:
-      drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff)
-      drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff)
-      drop-shadow(0 18px 30px rgba(0,0,0,.55));
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 7px var(--white),
+      0 22px 44px rgba(0,0,0,.6);
   }
-  .schalk { left: 676px; height: 770px; bottom: -150px; }
-  .justin { left: 916px; height: 420px; bottom: -60px; }
+  .avatar img { position: absolute; display: block; }
+
+  .avatar.schalk {
+    left: 872px; top: 52px;
+    width: 330px; height: 330px;
+    background: linear-gradient(160deg, #3aa6e6 0%, #1c5aa8 100%);
+  }
   /* warm up the blue stage lighting a touch so skin tones read naturally */
-  .schalk.person {
-    filter:
-      sepia(.14) saturate(1.12) brightness(1.04)
-      drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff)
-      drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff)
-      drop-shadow(0 18px 30px rgba(0,0,0,.55));
+  .avatar.schalk img {
+    left: 14px; top: 34px; height: 575px;
+    filter: sepia(.14) saturate(1.12) brightness(1.04);
   }
+
+  .avatar.justin {
+    left: 984px; top: 408px;
+    width: 264px; height: 264px;
+    background: linear-gradient(160deg, #f07a3e 0%, #c7361a 100%);
+  }
+  .avatar.justin img { left: 26px; top: 26px; height: 238px; }
 
   /* ---------- copy ---------- */
   .copy {
@@ -75,7 +83,7 @@
     left: 56px;
     top: 56px;
     bottom: 52px;
-    width: 740px;
+    width: 800px;
     z-index: 3;
     display: flex;
     flex-direction: column;
@@ -98,27 +106,26 @@
   }
 
   .headline {
-    margin-top: 6px;
     font-weight: 900;
     font-style: italic;
     text-transform: uppercase;
-    line-height: .88;
+    line-height: .9;
     letter-spacing: -.02em;
   }
   .headline .l1 {
     display: block;
-    font-size: 136px;
+    font-size: 132px;
     text-shadow: 0 6px 0 rgba(0,0,0,.35);
   }
 
-  /* "ZERO JS" with view-transition style ghost frames trailing behind it */
+  /* "ANIMATIONS" with view-transition style ghost frames trailing behind it */
   .headline .l2 {
     position: relative;
     display: inline-block;
     white-space: nowrap;
-    font-size: 178px;
+    font-size: 132px;
     color: var(--yellow);
-    text-shadow: 0 8px 0 rgba(0,0,0,.35);
+    text-shadow: 0 7px 0 rgba(0,0,0,.35);
   }
   .headline .l2 .ghost {
     position: absolute;
@@ -126,8 +133,25 @@
     z-index: -1;
     text-shadow: none;
   }
-  .headline .l2 .g1 { color: var(--orange); opacity: .55; transform: translateX(-26px); }
-  .headline .l2 .g2 { color: var(--red);    opacity: .30; transform: translateX(-52px); }
+  .headline .l2 .g1 { color: var(--orange); opacity: .55; transform: translateX(-22px); }
+  .headline .l2 .g2 { color: var(--red);    opacity: .30; transform: translateX(-44px); }
+
+  .headline .l3 {
+    display: block;
+    margin-top: 18px;
+    font-size: 64px;
+    line-height: 1;
+    white-space: nowrap;
+    text-shadow: 0 5px 0 rgba(0,0,0,.35);
+  }
+  .headline .l3 .no {
+    display: inline-block;
+    padding: 0 14px 4px;
+    margin-left: 4px;
+    background: var(--orange);
+    border-radius: 10px;
+    text-shadow: none;
+  }
 
   .code {
     display: inline-flex;
@@ -146,35 +170,32 @@
   .code .prop { color: #7fd1ff; }
   .code .val  { color: var(--yellow); }
   .code .p    { color: #9aa3c7; }
-
 </style>
 </head>
 <body>
   <div class="thumb">
     <div class="grid"></div>
 
-    <img class="person schalk" src="assets/schalk-venter.png" alt="Schalk Venter">
-    <img class="person justin" src="assets/justin-slack.png" alt="Justin Slack">
+    <div class="avatar schalk"><img src="assets/schalk-venter.png" alt="Schalk Venter"></div>
+    <div class="avatar justin"><img src="assets/justin-slack.png" alt="Justin Slack"></div>
 
     <div class="copy">
-      <div class="pill">
-        CSS View Transitions
-      </div>
+      <div class="pill">CSS View Transitions</div>
 
       <h1 class="headline">
-        <span class="l1">SPA Feel.</span>
+        <span class="l1">App-like</span>
         <span class="l2">
-          <span class="ghost g2" aria-hidden="true">Zero JS</span>
-          <span class="ghost g1" aria-hidden="true">Zero JS</span>
-          Zero JS
+          <span class="ghost g2" aria-hidden="true">Animations</span>
+          <span class="ghost g1" aria-hidden="true">Animations</span>
+          Animations
         </span>
+        <span class="l3">With <span class="no">No JavaScript</span></span>
       </h1>
 
       <div class="code">
         <span><span class="at">@view-transition</span> <span class="p">{</span> <span class="prop">navigation</span><span class="p">:</span> <span class="val">auto</span><span class="p">; }</span></span>
       </div>
     </div>
-
   </div>
 </body>
 </html>
